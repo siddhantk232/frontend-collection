@@ -1,0 +1,3 @@
+{
+  "projects": [{ "name": "test proj", "main": "test/index.html" }]
+}
