@@ -25,6 +25,12 @@ function buildSass() {
 
 exports.default = parallel(templates, buildSass);
 exports.watch = watch(
-  ["src/**/*.html", "gulpfile.js", "src/**/*.js", "src/**/*.scss"],
+  [
+    "src/**/*.html",
+    "gulpfile.js",
+    "src/**/*.js",
+    "src/**/*.scss",
+    "projects.json",
+  ],
   parallel(templates, buildSass)
 );
