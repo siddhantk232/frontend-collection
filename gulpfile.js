@@ -8,6 +8,7 @@ const fs = require("fs");
 
 const config = {
   scss: "src/**/*.scss",
+  css: "_site/**/*.css",
   html: "src/**/*.html",
   js: "src/**/*.js",
   output: "_site",
@@ -22,7 +23,12 @@ const buildStyles = function () {
         sourceComments: true,
       })
     )
-    .pipe(postcss())
+    .pipe(dest(config["output"]));
+};
+
+const usePostcss = function () {
+  return src(config["css"])
+    .pipe(postcss({ watch: true }))
     .pipe(dest(config["output"]));
 };
 
@@ -77,7 +83,7 @@ const watchSource = function (done) {
 
 // Default task
 // gulp
-exports.default = parallel(buildStyles, javscript, templates);
+exports.default = parallel(buildStyles, javscript, templates, usePostcss);
 
 // Watch and reload
 // gulp watch
