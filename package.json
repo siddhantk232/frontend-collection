@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "gulp watch",
-    "build": "gulp"
+    "build": "NODE_ENV=production gulp"
   },
   "keywords": [],
   "author": "siddhantk232 <siddhantk232@gmail.com>",
