@@ -23,12 +23,8 @@ const buildStyles = function () {
         sourceComments: true,
       })
     )
-    .pipe(dest(config["output"]));
-};
-
-const usePostcss = function () {
-  return src(config["css"])
-    .pipe(postcss({ watch: true }))
+    .pipe(dest(config["output"]))
+    .pipe(postcss())
     .pipe(dest(config["output"]));
 };
 
@@ -83,7 +79,7 @@ const watchSource = function (done) {
 
 // Default task
 // gulp
-exports.default = parallel(buildStyles, javscript, templates, usePostcss);
+exports.default = parallel(buildStyles, javscript, templates);
 
 // Watch and reload
 // gulp watch

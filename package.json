@@ -20,8 +20,11 @@
     "gulp-postcss": "^9.0.0",
     "gulp-sass": "^4.1.0",
     "node-sass": "^6.0.0",
+    "postcss-cli": "^8.3.1"
+  },
+  "dependencies": {
     "postcss": "^8.2.15",
-    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.2",
     "tailwindcss": "^2.1.2"
   }
 }
