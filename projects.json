@@ -1,3 +1,8 @@
 {
-  "projects": []
+  "projects": [
+    {
+      "name": "GreenRooms",
+      "main": "/green-rooms"
+    }
+  ]
 }

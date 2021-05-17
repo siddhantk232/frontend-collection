@@ -9,7 +9,9 @@
   <ul>
     {% for item in projects %}
       <li class="text-colored">
-        The name should be: <a href="{{item.main}}">{{item.name}}</a>
+        <h2>
+          <a href="{{item.main}}">{{item.name}}</a>
+        </h2>
       </li> 
     {% endfor %}
   </ul>
