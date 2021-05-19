@@ -3,7 +3,11 @@ module.exports = {
   purge: ["./src/**/*.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        gaccent: "#00C365",
+      },
+    },
   },
   variants: {
     extend: {},

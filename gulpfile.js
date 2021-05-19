@@ -4,7 +4,6 @@ const postcss = require("gulp-postcss");
 const browserSync = require("browser-sync");
 const data = require("gulp-data");
 const nunjucks = require("gulp-nunjucks-html");
-const fs = require("fs");
 
 const config = {
   scss: "src/**/*.scss",
@@ -35,13 +34,19 @@ const javscript = function () {
 };
 
 const templates = function () {
+  const projects = require("./projects");
+
   return src(config["html"])
     .pipe(
       data(function () {
-        return JSON.parse(fs.readFileSync("./projects.json"));
+        return projects.globals;
       })
     )
-    .pipe(nunjucks())
+    .pipe(
+      nunjucks({
+        searchPaths: projects.templates,
+      })
+    )
     .pipe(dest(config["output"]));
 };
 
